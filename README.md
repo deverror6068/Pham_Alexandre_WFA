@@ -1,5 +1,5 @@
 # Pham_Alexandre_WFA
-Projet WFA
+Repo du Projet WFA (qui consiste à créer un jeu en Window Form)
 
 
 # Journal de dev  
