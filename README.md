@@ -6,9 +6,9 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form)
 
 ## 20 Septembre 
 
-J'ai choisi le jeu à réaliser en Window Form (C#)   et j'ai commencé à mettre en place le  jeux de base que je compte améliorer 
+J'ai choisi le jeu à réaliser en Window Form (C#) qui sera un snake   et j'ai commencé à mettre en place le  jeux de base que je compte améliorer 
 
 
 ## 21 Septembre 
 
-J'ai continué à configurer le jeu de base 
+J'ai continué à configurer le jeu de base  ainsi qu'a tester sa jouabiblité 
