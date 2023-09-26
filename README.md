@@ -1,5 +1,5 @@
 # Pham_Alexandre_WFA
-Repo du Projet WFA (qui consiste à créer un jeu en Window Form)
+Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'est porté sur un snake avec des modifications personnelles 
 
 
 # Journal de dev  
