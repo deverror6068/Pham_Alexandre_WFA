@@ -25,11 +25,11 @@ j'ai ajouté  un  bouton pour mettre le jeu en pause cependant je rencontre  des
 
 ## 24 Septembre 
 
-j'ai recontré un problème majeur sur le jeu : le  jeux semble recontrer   des "game over " abusifs  qui semble liés au conditions défaite j'ai essayé de resoudre le problème sans résultat, j'ai aussi corrigé un problème mineur   qui faisait qu'avant que le jeu soit lancé la nourriture apparaissait dans la zone de jeu 
+j'ai recontré un problème majeur sur le jeu : le  jeux semble recontrer   des "game over " abusifs  qui semblent liés aux conditions  de défaite j'ai essayé de résoudre le problème sans résultats, j'ai aussi corrigé un problème mineur   qui faisait qu'avant que le jeu soit lancé la nourriture apparaissait dans la zone de jeu 
 
 
 ## 25 septembre 
 
-Le problème semble venir de l'actualisation du corps de serpent et de le temps ainsi  j'ai apporté un correctif au problème en empéchant le "spam" des touches de déplacement 
+Le problème semble venir de l'actualisation du corps de serpent et de le temps ainsi  j'ai apporté un correctif au problème en empéchant le "spam" des touches de déplacement  j'ai aussi ajouté un mecanique de jeu qui augmente la vitesse du serpent lorsqu'il  mange une nourriture  pour donner une difficulté supplémentaire au jeu 
 
 
