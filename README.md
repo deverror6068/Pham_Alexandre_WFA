@@ -6,7 +6,7 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'es
 
 
 <img src="." alt="Alt text" title="Optional title">
-<img src="https://raw.githubusercontent.com/deverror6068/Pham_Alexandre_WFA/main/img%20ressources/17.PNG">
+<img height = "300px" width="300px" src="https://raw.githubusercontent.com/deverror6068/Pham_Alexandre_WFA/main/img%20ressources/17.PNG">
 # Journal de dev  
 
 ## 20 Septembre
