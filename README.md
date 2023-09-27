@@ -33,3 +33,13 @@ j'ai recontré un problème majeur sur le jeu : le  jeux semble recontrer   des 
 Le problème semble venir de l'actualisation du corps de serpent et de le temps ainsi  j'ai apporté un correctif au problème en empéchant le "spam" des touches de déplacement  j'ai aussi ajouté un mecanique de jeu qui augmente la vitesse du serpent lorsqu'il  mange une nourriture  pour donner une difficulté supplémentaire au jeu 
 
 
+## 26 Septembre 
+
+J'ai ajouté au jeu un compte à rebours pour complexifier le gameplay  qui s'active à un certain score  et qui conduit à un gameover quand il est écoulé  et il est réinitialisé à chaque fois que le serpent  mange  de la nourriturre
+
+## 27 Septembre 
+
+J'  ai enrichi le jeux de modificateurs aléatoires (positifs, négatifs ou neutres)  qui s'enclèchent lors que le serpent mange de la nourriture afin de rendre le jeux moins linéaire  et j'ai ajouté des conditions  pour que les modificateurs  ne perturbent pas le compte à rebours 
+
+
+
