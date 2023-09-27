@@ -120,6 +120,7 @@ namespace Snake
         private void StartGame(object sender, EventArgs e)
         {
             this.picCanvas.Visible = true;
+            
             RestartGame();
         }
 
@@ -281,7 +282,8 @@ namespace Snake
         {
             maxWidth = picCanvas.Width/Settings.Width - 1 ;
             maxHeight = picCanvas.Height/Settings.Height - 1 ;
-
+            iscountdown = false;
+            this.gameTimer.Interval = 25;
             Snake.Clear();
          
 
@@ -346,7 +348,7 @@ namespace Snake
             }
 
             Random rnd = new Random();
-            string[] effectname = { "slow", "fast","shrink", "enlarge","nothing", "doublepoint"};
+            string[] effectname = { "slow", "fast", "enlarge", "nothing", "shrink","doublepoint" };
 
              
 
@@ -401,7 +403,36 @@ namespace Snake
             }
 
 
+            if (chosen == "doublepoint")
+            {
+                if (Score == 10 || Score == 11)
+                {
+                    settimer();
+                }
+                    Score += 1;
+               
+            }
 
+            txtScore.Text = "Score : " + Score;
+
+
+
+            if (chosen == "shrink")
+            {
+               if (Snake.Count() > 6) {
+                    for (int i = 0; i < 3; i++)
+                    {
+
+                        Snake.RemoveAt(Snake.Count() - 1);
+                    }
+                    width.Text = "" + Snake.Count();
+                }
+            }
+            else
+            {
+                width.Text = "" + Snake.Count();
+                Snake.Add(body);
+            }
 
 
             if (Score >= 11  &&  iscountdown == true )
@@ -412,17 +443,23 @@ namespace Snake
 
             if (Score == 11 && iscountdown == false )
             {
-                iscountdown = true;
-                timer2 = new System.Windows.Forms.Timer();
-                timer2.Tick += new EventHandler(count_down);
-                timer2.Interval = 700;
-                timer2.Start();
+                settimer();
             }
 
 
-            Snake.Add(body);
+            
             width.Text = ""+Snake.Count();
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+        }
+
+        private void settimer()
+        {
+            iscountdown = true;
+            timer2 = new System.Windows.Forms.Timer();
+            timer2.Tick += new EventHandler(count_down);
+            timer2.Interval = 700;
+            timer2.Start();
+            timeleft.Text = duration.ToString();
         }
 
         private void count_down(object sender, EventArgs e)
@@ -431,7 +468,7 @@ namespace Snake
             if (duration == 0)
             {
                 timer2.Stop();
-               // GameOver();
+                GameOver();
 
             }
             else if (duration > 0)
@@ -444,7 +481,13 @@ namespace Snake
         }
         private void GameOver()
         {
+            duration = 60;
             gameTimer.Stop();
+            timeleft.Text = ""+iscountdown ;
+            if (iscountdown == true )
+            {
+                timer2.Stop();
+            }
             Start.Enabled = true;
             Capture.Enabled = true;
           //  this.picCanvas.Visible = false;
