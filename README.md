@@ -39,7 +39,7 @@ J'ai ajouté au jeu un compte à rebours pour complexifier le gameplay  qui s'ac
 
 ## 27 Septembre 
 
-J'  ai enrichi le jeux de modificateurs aléatoires (positifs, négatifs ou neutres)  qui s'enclèchent lors que le serpent mange de la nourriture afin de rendre le jeux moins linéaire  et j'ai ajouté des conditions  pour que les modificateurs  ne perturbent pas le compte à rebours 
+J'  ai enrichi le jeux de modificateurs aléatoires (positifs, négatifs ou neutres)  qui s'enclèchent lors que le serpent mange de la nourriture afin de rendre le jeux moins linéaire  et j'ai ajouté des conditions  pour que les modificateurs  ne perturbent pas le compte à rebours  ainsi que de 2 images de game over selon la cause du game over (le serpend se percute lui meme  ou le compte à rebours est écoulé )
 
 
 
