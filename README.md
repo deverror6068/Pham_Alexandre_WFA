@@ -3,9 +3,9 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'es
 
 
 
-![alt le jeu dans son état actuel]([[http://url/to/img.png](https://github.com/deverror6068/Pham_Alexandre_WFA/blob/main/img%20ressources/17.PNG](https://raw.githubusercontent.com/deverror6068/Pham_Alexandre_WFA/main/img%20ressources/17.PNG)))
 
 
+<img src="/path/to/img.jpg" alt="Alt text" title="Optional title">
 # Journal de dev  
 
 ## 20 Septembre
