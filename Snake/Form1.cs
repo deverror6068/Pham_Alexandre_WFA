@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace Snake
         private List<Circle>Snake = new List<Circle>();
         private DateTime lastMoveTime = DateTime.Now;
         private Circle food = new Circle();
+        private int duration = 60;
+        private bool iscountdown = false;
 
         int maxWidth; 
         int maxHeight;
@@ -30,6 +33,8 @@ namespace Snake
         Random rand = new Random();
 
         bool goLeft, goRight, goDown, goUp;
+        private Timer timer2;
+
         public Form1()
         {
             InitializeComponent();
@@ -320,26 +325,10 @@ namespace Snake
             this.temp_3.Text = "" + this.gameTimer.Interval;
             
 
-            if ((int)((this.gameTimer.Interval * 0.75))<=0)
-            {
-                this.gameTimer.Interval = 1;
-
-
-            }else
-            {
-                this.gameTimer.Interval = (int)((this.gameTimer.Interval * 0.75));
-
-            }
-
-            this.temp_3.Text = ""+ this.gameTimer.Interval;
+          
 
 
 
-            if ((int)(this.gameTimer.Interval) == 0)
-            {
-                this.gameTimer.Interval = 1;
-
-            }
             if ((int)(this.gameTimer.Interval) > 60)
             {
                 this.gameTimer.Interval = 60;
@@ -356,9 +345,102 @@ namespace Snake
 
             }
 
+            Random rnd = new Random();
+            string[] effectname = { "slow", "fast","shrink", "enlarge","nothing", "doublepoint"};
 
-            Snake.Add(body );
+             
+
+            int mIndex = rnd.Next(effectname.Length);
+            string chosen = effectname[mIndex];
+
+            Chosen.Text = chosen;
+
+            if (chosen == "slow")
+            {
+                this.gameTimer.Interval = (int)((this.gameTimer.Interval * 1.5));
+
+                if (gameTimer.Interval >= 30) {
+                    this.gameTimer.Interval = 30;
+                }
+                this.temp_3.Text = "" + this.gameTimer.Interval;
+
+               
+
+            }
+
+            if (chosen == "fast")
+            {
+
+                if ((int)((this.gameTimer.Interval * 0.95)) <= 0)
+                {
+                    this.gameTimer.Interval = 1;
+
+
+                }
+                else
+                {
+                    this.gameTimer.Interval = (int)(this.gameTimer.Interval * 0.75);
+                    this.temp_3.Text = "" + this.gameTimer.Interval;
+
+                }
+
+            }
+
+            if (chosen == "enlarge")
+            {
+                width.Text = "" + Snake.Count();
+
+
+                for (int i = 0; i < 3; i++) {
+                    Circle body1 = new Circle();
+                    Snake.Add(body1);
+                }
+
+
+                width.Text = "" + Snake.Count();
+            }
+
+
+
+
+
+            if (Score >= 11  &&  iscountdown == true )
+
+            {
+                duration = 60;
+            }
+
+            if (Score == 11 && iscountdown == false )
+            {
+                iscountdown = true;
+                timer2 = new System.Windows.Forms.Timer();
+                timer2.Tick += new EventHandler(count_down);
+                timer2.Interval = 700;
+                timer2.Start();
+            }
+
+
+            Snake.Add(body);
+            width.Text = ""+Snake.Count();
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+        }
+
+        private void count_down(object sender, EventArgs e)
+        {
+
+            if (duration == 0)
+            {
+                timer2.Stop();
+               // GameOver();
+
+            }
+            else if (duration > 0)
+            {
+                duration--;
+              timeleft.Text = duration.ToString();
+            }
+
+
         }
         private void GameOver()
         {

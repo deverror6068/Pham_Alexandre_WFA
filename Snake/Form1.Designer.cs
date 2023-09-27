@@ -42,6 +42,9 @@ namespace Snake
             this.temp1 = new System.Windows.Forms.Label();
             this.temp2 = new System.Windows.Forms.Label();
             this.temp_3 = new System.Windows.Forms.Label();
+            this.timeleft = new System.Windows.Forms.Label();
+            this.Chosen = new System.Windows.Forms.Label();
+            this.width = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +150,33 @@ namespace Snake
             this.temp_3.TabIndex = 8;
             this.temp_3.Text = "label1";
             // 
+            // timeleft
+            // 
+            this.timeleft.AutoSize = true;
+            this.timeleft.Location = new System.Drawing.Point(653, 422);
+            this.timeleft.Name = "timeleft";
+            this.timeleft.Size = new System.Drawing.Size(35, 13);
+            this.timeleft.TabIndex = 9;
+            this.timeleft.Text = "label1";
+            // 
+            // Chosen
+            // 
+            this.Chosen.AutoSize = true;
+            this.Chosen.Location = new System.Drawing.Point(653, 471);
+            this.Chosen.Name = "Chosen";
+            this.Chosen.Size = new System.Drawing.Size(24, 13);
+            this.Chosen.TabIndex = 10;
+            this.Chosen.Text = "text";
+            // 
+            // width
+            // 
+            this.width.AutoSize = true;
+            this.width.Location = new System.Drawing.Point(656, 517);
+            this.width.Name = "width";
+            this.width.Size = new System.Drawing.Size(35, 13);
+            this.width.TabIndex = 11;
+            this.width.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +184,9 @@ namespace Snake
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 737);
+            this.Controls.Add(this.width);
+            this.Controls.Add(this.Chosen);
+            this.Controls.Add(this.timeleft);
             this.Controls.Add(this.temp_3);
             this.Controls.Add(this.temp2);
             this.Controls.Add(this.temp1);
@@ -188,6 +221,9 @@ namespace Snake
         private Label temp1;
         private Label temp2;
         private Label temp_3;
+        private Label timeleft;
+        private Label Chosen;
+        private Label width;
     }
 }
 
