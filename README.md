@@ -5,7 +5,8 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'es
 
 
 
-<img src="/path/to/img.jpg" alt="Alt text" title="Optional title">
+<img src="." alt="Alt text" title="Optional title">
+<img src="./17.PNG">
 # Journal de dev  
 
 ## 20 Septembre
