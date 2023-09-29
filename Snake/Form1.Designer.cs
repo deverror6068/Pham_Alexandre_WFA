@@ -45,8 +45,11 @@ namespace Snake
             this.timeleft = new System.Windows.Forms.Label();
             this.Chosen = new System.Windows.Forms.Label();
             this.width = new System.Windows.Forms.Label();
+            this.loose2 = new System.Windows.Forms.PictureBox();
+            this.scorestarved = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loose2)).BeginInit();
             this.SuspendLayout();
             // 
             // Start
@@ -71,7 +74,7 @@ namespace Snake
             this.Capture.Name = "Capture";
             this.Capture.Size = new System.Drawing.Size(133, 54);
             this.Capture.TabIndex = 1;
-            this.Capture.Text = "Capture";
+            this.Capture.Text = "Pause";
             this.Capture.UseVisualStyleBackColor = true;
             // 
             // picCanvas
@@ -90,7 +93,7 @@ namespace Snake
             // 
             this.txtScore.AutoSize = true;
             this.txtScore.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(616, 164);
+            this.txtScore.Location = new System.Drawing.Point(598, 162);
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(87, 26);
             this.txtScore.TabIndex = 3;
@@ -101,7 +104,7 @@ namespace Snake
             // 
             this.txtHighScore.AutoSize = true;
             this.txtHighScore.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHighScore.Location = new System.Drawing.Point(616, 199);
+            this.txtHighScore.Location = new System.Drawing.Point(598, 202);
             this.txtHighScore.Name = "txtHighScore";
             this.txtHighScore.Size = new System.Drawing.Size(87, 26);
             this.txtHighScore.TabIndex = 4;
@@ -126,7 +129,7 @@ namespace Snake
             // temp1
             // 
             this.temp1.AutoSize = true;
-            this.temp1.Location = new System.Drawing.Point(650, 276);
+            this.temp1.Location = new System.Drawing.Point(656, 548);
             this.temp1.Name = "temp1";
             this.temp1.Size = new System.Drawing.Size(35, 13);
             this.temp1.TabIndex = 6;
@@ -135,7 +138,7 @@ namespace Snake
             // temp2
             // 
             this.temp2.AutoSize = true;
-            this.temp2.Location = new System.Drawing.Point(650, 315);
+            this.temp2.Location = new System.Drawing.Point(612, 548);
             this.temp2.Name = "temp2";
             this.temp2.Size = new System.Drawing.Size(35, 13);
             this.temp2.TabIndex = 7;
@@ -144,7 +147,7 @@ namespace Snake
             // temp_3
             // 
             this.temp_3.AutoSize = true;
-            this.temp_3.Location = new System.Drawing.Point(650, 364);
+            this.temp_3.Location = new System.Drawing.Point(606, 517);
             this.temp_3.Name = "temp_3";
             this.temp_3.Size = new System.Drawing.Size(35, 13);
             this.temp_3.TabIndex = 8;
@@ -153,20 +156,20 @@ namespace Snake
             // timeleft
             // 
             this.timeleft.AutoSize = true;
-            this.timeleft.Location = new System.Drawing.Point(653, 422);
+            this.timeleft.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeleft.Location = new System.Drawing.Point(627, 328);
             this.timeleft.Name = "timeleft";
-            this.timeleft.Size = new System.Drawing.Size(35, 13);
+            this.timeleft.Size = new System.Drawing.Size(0, 22);
             this.timeleft.TabIndex = 9;
-            this.timeleft.Text = "label1";
             // 
             // Chosen
             // 
             this.Chosen.AutoSize = true;
-            this.Chosen.Location = new System.Drawing.Point(653, 471);
+            this.Chosen.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Chosen.Location = new System.Drawing.Point(599, 263);
             this.Chosen.Name = "Chosen";
-            this.Chosen.Size = new System.Drawing.Size(24, 13);
+            this.Chosen.Size = new System.Drawing.Size(0, 22);
             this.Chosen.TabIndex = 10;
-            this.Chosen.Text = "text";
             // 
             // width
             // 
@@ -177,6 +180,30 @@ namespace Snake
             this.width.TabIndex = 11;
             this.width.Text = "label1";
             // 
+            // loose2
+            // 
+            this.loose2.Image = ((System.Drawing.Image)(resources.GetObject("loose2.Image")));
+            this.loose2.Location = new System.Drawing.Point(30, 23);
+            this.loose2.Name = "loose2";
+            this.loose2.Size = new System.Drawing.Size(505, 598);
+            this.loose2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loose2.TabIndex = 12;
+            this.loose2.TabStop = false;
+            this.loose2.Tag = "";
+            this.loose2.Visible = false;
+            // 
+            // scorestarved
+            // 
+            this.scorestarved.AutoSize = true;
+            this.scorestarved.BackColor = System.Drawing.Color.White;
+            this.scorestarved.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scorestarved.Location = new System.Drawing.Point(227, 448);
+            this.scorestarved.Name = "scorestarved";
+            this.scorestarved.Size = new System.Drawing.Size(87, 26);
+            this.scorestarved.TabIndex = 13;
+            this.scorestarved.Text = "Score: 0\r\n";
+            this.scorestarved.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +211,8 @@ namespace Snake
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 737);
+            this.Controls.Add(this.scorestarved);
+            this.Controls.Add(this.loose2);
             this.Controls.Add(this.width);
             this.Controls.Add(this.Chosen);
             this.Controls.Add(this.timeleft);
@@ -204,6 +233,7 @@ namespace Snake
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loose2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +254,8 @@ namespace Snake
         private Label timeleft;
         private Label Chosen;
         private Label width;
+        private PictureBox loose2;
+        private Label scorestarved;
     }
 }
 

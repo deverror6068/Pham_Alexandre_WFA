@@ -21,7 +21,9 @@ namespace Snake
         private DateTime lastMoveTime = DateTime.Now;
         private Circle food = new Circle();
         private int duration = 60;
+        private int duration2 = 4;
         private bool iscountdown = false;
+
 
         int maxWidth; 
         int maxHeight;
@@ -29,11 +31,14 @@ namespace Snake
 
         int Score;
         int Highscore;
+        private bool crash = false;
+        private bool starved = false;
 
         Random rand = new Random();
 
         bool goLeft, goRight, goDown, goUp;
         private Timer timer2;
+        private Timer timer3;
 
         public Form1()
         {
@@ -120,8 +125,12 @@ namespace Snake
         private void StartGame(object sender, EventArgs e)
         {
             this.picCanvas.Visible = true;
-            
-            RestartGame();
+            this.LoosePicture.Visible = false;
+            loose2.Visible = false;
+            crash = false;
+            starved = false;
+
+        RestartGame();
         }
 
         private void TakeCapture(object sender, EventArgs e)
@@ -214,9 +223,10 @@ namespace Snake
 
                         if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
                         {
-                           // temp1.Text = "" +i + Snake[i].X +""+ Snake[j].X;
+                            // temp1.Text = "" +i + Snake[i].X +""+ Snake[j].X;
                             //temp2.Text = "" + j + Snake[i].Y +""+Snake[j].Y;
-                           // temp1.Text = "Collision détectée à l'indice " + i + " (" + Snake[i].X + ", " + Snake[i].Y + ") et " + j + " (" + Snake[j].X + ", " + Snake[j].Y + ")";
+                            // temp1.Text = "Collision détectée à l'indice " + i + " (" + Snake[i].X + ", " + Snake[i].Y + ") et " + j + " (" + Snake[j].X + ", " + Snake[j].Y + ")";
+                            crash = true;
                             GameOver();
                         }
                     }
@@ -355,7 +365,7 @@ namespace Snake
             int mIndex = rnd.Next(effectname.Length);
             string chosen = effectname[mIndex];
 
-            Chosen.Text = chosen;
+           // Chosen.Text = chosen;
 
             if (chosen == "slow")
             {
@@ -365,8 +375,11 @@ namespace Snake
                     this.gameTimer.Interval = 30;
                 }
                 this.temp_3.Text = "" + this.gameTimer.Interval;
+                Chosen.Visible = true;
+                Chosen.Text = "Vitesse X0.66";
+                Chosen.ForeColor = Color.Blue;
+                Effectdecay();
 
-               
 
             }
 
@@ -383,7 +396,10 @@ namespace Snake
                 {
                     this.gameTimer.Interval = (int)(this.gameTimer.Interval * 0.75);
                     this.temp_3.Text = "" + this.gameTimer.Interval;
-
+                    Chosen.Visible = true;
+                    Chosen.Text = "Vitesse X1.5";
+                    Chosen.ForeColor = Color.Red;
+                    Effectdecay();
                 }
 
             }
@@ -400,6 +416,10 @@ namespace Snake
 
 
                 width.Text = "" + Snake.Count();
+                Chosen.Visible = true;
+                Chosen.Text = "Prise de Poid !";
+                Chosen.ForeColor = Color.Red;
+                Effectdecay();
             }
 
 
@@ -410,12 +430,15 @@ namespace Snake
                     settimer();
                 }
                     Score += 1;
-               
+                Chosen.Visible = true;
+                Chosen.Text = "Score Doublé  !";
+               Chosen.ForeColor = Color.Blue;
+                Effectdecay();
             }
 
             txtScore.Text = "Score : " + Score;
 
-
+            
 
             if (chosen == "shrink")
             {
@@ -427,11 +450,25 @@ namespace Snake
                     }
                     width.Text = "" + Snake.Count();
                 }
+                Chosen.Visible = true;
+                Chosen.Text = "Rétrécissement !";
+                Chosen.ForeColor = Color.Blue;
+                Effectdecay();
             }
             else
             {
                 width.Text = "" + Snake.Count();
                 Snake.Add(body);
+                
+            }
+
+
+            if (chosen == "nothing")
+            {
+                Chosen.Visible = true;
+                Chosen.Text = "Rien !";
+                Chosen.ForeColor = Color.Gray;
+                Effectdecay();
             }
 
 
@@ -468,7 +505,8 @@ namespace Snake
             if (duration == 0)
             {
                 timer2.Stop();
-                GameOver();
+                starved = true;
+        GameOver();
 
             }
             else if (duration > 0)
@@ -479,19 +517,63 @@ namespace Snake
 
 
         }
+
+        private void Effectdecay() { 
+            timer3 = new System.Windows.Forms.Timer();
+            timer3.Tick += new EventHandler(count_downeffect);
+            timer3.Interval = 1000;
+            timer3.Start();
+       
+  
+        }
+
+
+        private void count_downeffect(object sender, EventArgs e)
+        {
+            {
+                if (duration2 == 0)
+                {
+                    timer3.Stop();
+                    Chosen.Visible = false;
+                    duration2 = 4;
+
+
+
+                }
+                else if (duration2 > 0)
+                {
+                    duration2--;
+
+                }
+
+
+            }
+        }
         private void GameOver()
         {
             duration = 60;
             gameTimer.Stop();
-            timeleft.Text = ""+iscountdown ;
+            timeleft.Text = "" ;//+iscountdown
             if (iscountdown == true )
             {
                 timer2.Stop();
             }
             Start.Enabled = true;
             Capture.Enabled = true;
-          //  this.picCanvas.Visible = false;
-            //this.LoosePicture.Visible = true;
+         
+
+            if (crash == true)
+            {
+                  this.picCanvas.Visible = false;
+                this.LoosePicture.Visible = true;
+            }
+
+            if (starved == true)
+            {
+                this.picCanvas.Visible = false;
+                loose2.Visible = true;
+                
+            }
 
             if (Score > Highscore)
             {
