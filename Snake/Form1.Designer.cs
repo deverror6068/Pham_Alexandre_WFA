@@ -33,7 +33,7 @@ namespace Snake
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Start = new System.Windows.Forms.Button();
-            this.Capture = new System.Windows.Forms.Button();
+            this.Close = new System.Windows.Forms.Button();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.txtScore = new System.Windows.Forms.Label();
             this.txtHighScore = new System.Windows.Forms.Label();
@@ -47,35 +47,43 @@ namespace Snake
             this.width = new System.Windows.Forms.Label();
             this.loose2 = new System.Windows.Forms.PictureBox();
             this.scorestarved = new System.Windows.Forms.Label();
+            this.Victory = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loose2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Victory)).BeginInit();
             this.SuspendLayout();
             // 
             // Start
             // 
-            this.Start.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Start.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.Start.Image = ((System.Drawing.Image)(resources.GetObject("Start.Image")));
-            this.Start.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.Start.Location = new System.Drawing.Point(615, 23);
+            this.Start.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Start.Location = new System.Drawing.Point(558, 23);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(133, 54);
             this.Start.TabIndex = 0;
             this.Start.Text = "Start";
+            this.Start.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.StartGame);
             // 
-            // Capture
+            // Close
             // 
-            this.Capture.Enabled = false;
-            this.Capture.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Capture.Location = new System.Drawing.Point(615, 83);
-            this.Capture.Name = "Capture";
-            this.Capture.Size = new System.Drawing.Size(133, 54);
-            this.Capture.TabIndex = 1;
-            this.Capture.Text = "Pause";
-            this.Capture.UseVisualStyleBackColor = true;
+            this.Close.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Close.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
+            this.Close.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Close.Location = new System.Drawing.Point(558, 83);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(133, 54);
+            this.Close.TabIndex = 1;
+            this.Close.Text = "Quitter";
+            this.Close.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Close.UseVisualStyleBackColor = true;
+            this.Close.Click += new System.EventHandler(this.CloseForm);
             // 
             // picCanvas
             // 
@@ -93,7 +101,7 @@ namespace Snake
             // 
             this.txtScore.AutoSize = true;
             this.txtScore.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(598, 162);
+            this.txtScore.Location = new System.Drawing.Point(577, 162);
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(87, 26);
             this.txtScore.TabIndex = 3;
@@ -104,7 +112,7 @@ namespace Snake
             // 
             this.txtHighScore.AutoSize = true;
             this.txtHighScore.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHighScore.Location = new System.Drawing.Point(598, 202);
+            this.txtHighScore.Location = new System.Drawing.Point(577, 202);
             this.txtHighScore.Name = "txtHighScore";
             this.txtHighScore.Size = new System.Drawing.Size(87, 26);
             this.txtHighScore.TabIndex = 4;
@@ -203,14 +211,27 @@ namespace Snake
             this.scorestarved.TabIndex = 13;
             this.scorestarved.Text = "Score: 0\r\n";
             this.scorestarved.Visible = false;
+            this.scorestarved.Click += new System.EventHandler(this.scorestarved_Click);
+            // 
+            // Victory
+            // 
+            this.Victory.Image = ((System.Drawing.Image)(resources.GetObject("Victory.Image")));
+            this.Victory.Location = new System.Drawing.Point(30, 23);
+            this.Victory.Name = "Victory";
+            this.Victory.Size = new System.Drawing.Size(505, 598);
+            this.Victory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Victory.TabIndex = 14;
+            this.Victory.TabStop = false;
+            this.Victory.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 737);
+            this.Controls.Add(this.Victory);
             this.Controls.Add(this.scorestarved);
             this.Controls.Add(this.loose2);
             this.Controls.Add(this.width);
@@ -222,18 +243,21 @@ namespace Snake
             this.Controls.Add(this.txtHighScore);
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.picCanvas);
-            this.Controls.Add(this.Capture);
+            this.Controls.Add(this.Close);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.LoosePicture);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Snake";
+            this.TransparencyKey = System.Drawing.Color.DarkGray;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loose2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Victory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +266,7 @@ namespace Snake
         #endregion
 
         private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button Capture;
+        private System.Windows.Forms.Button Close;
         private System.Windows.Forms.PictureBox picCanvas;
         private System.Windows.Forms.Label txtScore;
         private System.Windows.Forms.Label txtHighScore;
@@ -256,6 +280,7 @@ namespace Snake
         private Label width;
         private PictureBox loose2;
         private Label scorestarved;
+        private PictureBox Victory;
     }
 }
 
