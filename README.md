@@ -66,5 +66,14 @@ J'ai ajouté la condition de victoire qui a lieu lors que le serpent atteint un 
 
 
 
+
+
+
+
+
+
+
+
+
 J'ai
 
