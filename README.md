@@ -10,12 +10,13 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'es
 # Le jeu dans son état actuel 
 
 
-### Instruction d'installation 
+# Instruction d'installation 
 
 
 Pour installer le projet téléchargez-le puis ouvrez-le avec visual studio 
 
 
+#Journal de dev 
 
 ## 20 Septembre
 
