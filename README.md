@@ -67,7 +67,7 @@ Les fonctionnalités  entreprises la veille sont terminées  et l'image de victo
 J'ai ajouté la condition de victoire qui a lieu lors que le serpent atteint un nombre satisfaisant de points  et j'ai aussi amélioré l'interface du jeu  et enfin j'ai changé  l'image de fond et  fini de commenter le code
 
 
-## 31 Septembre 
+## 1 Octobre 
 
 Le commentage du code est terminé et l'interface a été améliorée 
 
