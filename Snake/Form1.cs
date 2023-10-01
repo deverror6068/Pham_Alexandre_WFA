@@ -65,20 +65,7 @@ namespace Snake
 
 
      
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void KeyIsDown(object sender, KeyEventArgs e) //fonction pour déterminer la direction de l'entrée récupérée 
         {
@@ -243,9 +230,7 @@ namespace Snake
 
                         if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y) // si la tete est au meme emplacement qu'un emplacement du corps 
                         {
-                            // temp1.Text = "" +i + Snake[i].X +""+ Snake[j].X;
-                            //temp2.Text = "" + j + Snake[i].Y +""+Snake[j].Y;
-                            // temp1.Text = "Collision détectée à l'indice " + i + " (" + Snake[i].X + ", " + Snake[i].Y + ") et " + j + " (" + Snake[j].X + ", " + Snake[j].Y + ")";
+                         
                             crash = true;
                             GameOver();
                         }

@@ -39,8 +39,6 @@ namespace Snake
             this.txtHighScore = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.LoosePicture = new System.Windows.Forms.PictureBox();
-            this.temp1 = new System.Windows.Forms.Label();
-            this.temp2 = new System.Windows.Forms.Label();
             this.temp_3 = new System.Windows.Forms.Label();
             this.timeleft = new System.Windows.Forms.Label();
             this.Chosen = new System.Windows.Forms.Label();
@@ -52,6 +50,8 @@ namespace Snake
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.effect = new System.Windows.Forms.PictureBox();
             this.timericon = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loose2)).BeginInit();
@@ -60,6 +60,8 @@ namespace Snake
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.effect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timericon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Start
@@ -115,7 +117,6 @@ namespace Snake
             this.txtScore.Size = new System.Drawing.Size(87, 26);
             this.txtScore.TabIndex = 3;
             this.txtScore.Text = "Score: 0\r\n";
-            this.txtScore.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtHighScore
             // 
@@ -143,32 +144,14 @@ namespace Snake
             this.LoosePicture.TabStop = false;
             this.LoosePicture.Visible = false;
             // 
-            // temp1
-            // 
-            this.temp1.AutoSize = true;
-            this.temp1.Location = new System.Drawing.Point(656, 548);
-            this.temp1.Name = "temp1";
-            this.temp1.Size = new System.Drawing.Size(35, 13);
-            this.temp1.TabIndex = 6;
-            this.temp1.Text = "label1";
-            // 
-            // temp2
-            // 
-            this.temp2.AutoSize = true;
-            this.temp2.Location = new System.Drawing.Point(612, 548);
-            this.temp2.Name = "temp2";
-            this.temp2.Size = new System.Drawing.Size(35, 13);
-            this.temp2.TabIndex = 7;
-            this.temp2.Text = "label1";
-            // 
             // temp_3
             // 
             this.temp_3.AutoSize = true;
-            this.temp_3.Location = new System.Drawing.Point(606, 517);
+            this.temp_3.Location = new System.Drawing.Point(589, 448);
             this.temp_3.Name = "temp_3";
-            this.temp_3.Size = new System.Drawing.Size(35, 13);
+            this.temp_3.Size = new System.Drawing.Size(41, 13);
             this.temp_3.TabIndex = 8;
-            this.temp_3.Text = "label1";
+            this.temp_3.Text = "Vitesse";
             // 
             // timeleft
             // 
@@ -191,11 +174,11 @@ namespace Snake
             // width
             // 
             this.width.AutoSize = true;
-            this.width.Location = new System.Drawing.Point(656, 517);
+            this.width.Location = new System.Drawing.Point(697, 448);
             this.width.Name = "width";
-            this.width.Size = new System.Drawing.Size(35, 13);
+            this.width.Size = new System.Drawing.Size(32, 13);
             this.width.TabIndex = 11;
-            this.width.Text = "label1";
+            this.width.Text = "Taille";
             // 
             // loose2
             // 
@@ -274,6 +257,26 @@ namespace Snake
             this.timericon.TabStop = false;
             this.timericon.Visible = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(541, 440);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(654, 440);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 20;
+            this.pictureBox4.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +284,8 @@ namespace Snake
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 737);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.timericon);
             this.Controls.Add(this.effect);
             this.Controls.Add(this.pictureBox2);
@@ -292,8 +297,6 @@ namespace Snake
             this.Controls.Add(this.Chosen);
             this.Controls.Add(this.timeleft);
             this.Controls.Add(this.temp_3);
-            this.Controls.Add(this.temp2);
-            this.Controls.Add(this.temp1);
             this.Controls.Add(this.txtHighScore);
             this.Controls.Add(this.txtScore);
             this.Controls.Add(this.picCanvas);
@@ -317,6 +320,8 @@ namespace Snake
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.effect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timericon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,8 +336,6 @@ namespace Snake
         private System.Windows.Forms.Label txtHighScore;
         private System.Windows.Forms.Timer gameTimer;
         private PictureBox LoosePicture;
-        private Label temp1;
-        private Label temp2;
         private Label temp_3;
         private Label timeleft;
         private Label Chosen;
@@ -344,6 +347,8 @@ namespace Snake
         private PictureBox pictureBox2;
         private PictureBox effect;
         private PictureBox timericon;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }
 
