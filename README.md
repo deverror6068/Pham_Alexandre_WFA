@@ -51,7 +51,7 @@ J'ai  commencé à rajouter  un  compte à rebours pour le message indiquant le 
 
 ## 29 Septembre 
 
-Les fonctionnalités  entreprises la veille sont terminé  et l'image de victoire terminée 
+Les fonctionnalités  entreprises la veille sont terminées  et l'image de victoire terminée 
 
 ## 30 Septembre 
 
