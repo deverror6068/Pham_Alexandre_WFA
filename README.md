@@ -49,6 +49,13 @@ J'  ai enrichi le jeux de modificateurs aléatoires (positifs, négatifs ou neut
 ## 28 Septembre 
 J'ai  commencé à rajouter  un  compte à rebours pour le message indiquant le bonus gagné afin d'améliorer l'argonomie ainsi que pour  les conditions de victoire 
 
+## 29 Septembre 
+
+Les fonctionnalités  entreprises la veille sont terminé  et l'image de victoire terminée 
+
+## 30 Septembre 
+
+J'ai ajouté la condition de victoire qui a lieu lors que le serpent atteint un nombre satisfaisant de points  et j'ai aussi amélioré l'interface du jeu  et enfin j'ai changé  l'image de fond et  fini de commenter le code
 
 
 
@@ -56,6 +63,4 @@ J'ai  commencé à rajouter  un  compte à rebours pour le message indiquant le 
 
 
 
-
-J'ai
 
