@@ -9,6 +9,14 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'es
 <img   height = "300px" width="300px" src="https://raw.githubusercontent.com/deverror6068/Pham_Alexandre_WFA/main/img%20ressources/17.PNG">
 # Le jeu dans son état actuel 
 
+
+### Instruction d'installation 
+
+
+Pour installer le projet téléchargez-le puis ouvrez-le avec visual studio 
+
+
+
 ## 20 Septembre
 
 
@@ -56,6 +64,11 @@ Les fonctionnalités  entreprises la veille sont terminées  et l'image de victo
 ## 30 Septembre 
 
 J'ai ajouté la condition de victoire qui a lieu lors que le serpent atteint un nombre satisfaisant de points  et j'ai aussi amélioré l'interface du jeu  et enfin j'ai changé  l'image de fond et  fini de commenter le code
+
+
+## 31 Septembre 
+
+Le commentage du code est terminé et l'interface a été améliorée 
 
 
 
