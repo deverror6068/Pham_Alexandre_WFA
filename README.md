@@ -1,4 +1,4 @@
-# Pham_Alexandre_WFA
+# Présentation
 Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'est porté sur un snake avec des modifications personnelles 
 
 
@@ -16,7 +16,7 @@ Repo du Projet WFA (qui consiste à créer un jeu en Window Form) mon choix s'es
 Pour installer le projet téléchargez-le puis ouvrez-le avec visual studio 
 
 
-#Journal de dev 
+# Journal de dev 
 
 ## 20 Septembre
 
