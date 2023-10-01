@@ -48,16 +48,25 @@ namespace Snake
             this.loose2 = new System.Windows.Forms.PictureBox();
             this.scorestarved = new System.Windows.Forms.Label();
             this.Victory = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.effect = new System.Windows.Forms.PictureBox();
+            this.timericon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loose2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Victory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timericon)).BeginInit();
             this.SuspendLayout();
             // 
             // Start
             // 
+            this.Start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Start.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Start.ForeColor = System.Drawing.Color.Black;
             this.Start.Image = ((System.Drawing.Image)(resources.GetObject("Start.Image")));
             this.Start.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Start.Location = new System.Drawing.Point(558, 23);
@@ -66,13 +75,13 @@ namespace Snake
             this.Start.TabIndex = 0;
             this.Start.Text = "Start";
             this.Start.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Start.UseVisualStyleBackColor = true;
+            this.Start.UseVisualStyleBackColor = false;
             this.Start.Click += new System.EventHandler(this.StartGame);
             // 
             // Close
             // 
             this.Close.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Close.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
             this.Close.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Close.Location = new System.Drawing.Point(558, 83);
@@ -101,7 +110,7 @@ namespace Snake
             // 
             this.txtScore.AutoSize = true;
             this.txtScore.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(577, 162);
+            this.txtScore.Location = new System.Drawing.Point(584, 162);
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(87, 26);
             this.txtScore.TabIndex = 3;
@@ -112,7 +121,7 @@ namespace Snake
             // 
             this.txtHighScore.AutoSize = true;
             this.txtHighScore.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHighScore.Location = new System.Drawing.Point(577, 202);
+            this.txtHighScore.Location = new System.Drawing.Point(584, 200);
             this.txtHighScore.Name = "txtHighScore";
             this.txtHighScore.Size = new System.Drawing.Size(87, 26);
             this.txtHighScore.TabIndex = 4;
@@ -224,6 +233,47 @@ namespace Snake
             this.Victory.TabStop = false;
             this.Victory.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(541, 162);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(541, 200);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // effect
+            // 
+            this.effect.Image = ((System.Drawing.Image)(resources.GetObject("effect.Image")));
+            this.effect.Location = new System.Drawing.Point(543, 254);
+            this.effect.Name = "effect";
+            this.effect.Size = new System.Drawing.Size(35, 31);
+            this.effect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.effect.TabIndex = 17;
+            this.effect.TabStop = false;
+            // 
+            // timericon
+            // 
+            this.timericon.Image = ((System.Drawing.Image)(resources.GetObject("timericon.Image")));
+            this.timericon.Location = new System.Drawing.Point(541, 315);
+            this.timericon.Name = "timericon";
+            this.timericon.Size = new System.Drawing.Size(35, 35);
+            this.timericon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.timericon.TabIndex = 18;
+            this.timericon.TabStop = false;
+            this.timericon.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +281,10 @@ namespace Snake
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 737);
+            this.Controls.Add(this.timericon);
+            this.Controls.Add(this.effect);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Victory);
             this.Controls.Add(this.scorestarved);
             this.Controls.Add(this.loose2);
@@ -252,12 +306,17 @@ namespace Snake
             this.Name = "Form1";
             this.Text = "Snake";
             this.TransparencyKey = System.Drawing.Color.DarkGray;
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoosePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loose2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Victory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timericon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,6 +340,10 @@ namespace Snake
         private PictureBox loose2;
         private Label scorestarved;
         private PictureBox Victory;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox effect;
+        private PictureBox timericon;
     }
 }
 

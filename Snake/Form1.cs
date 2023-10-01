@@ -524,6 +524,7 @@ namespace Snake
             timer2.Interval = 700;      // intervalle entre chaque tick 
             timer2.Start();         // activation du timer
             timeleft.Text = duration.ToString();
+            timericon.Visible = true;
         }
 
         private void count_down(object sender, EventArgs e)
@@ -546,6 +547,11 @@ namespace Snake
         }
 
         private void scorestarved_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
         {
 
         }
@@ -584,8 +590,10 @@ namespace Snake
         private void GameOver() // fonction de fin de jeu (verification victoire defaite)
         {
             duration = 60; // remise du compte à rebours de la nourriture à la valeur de base 
-            gameTimer.Stop(); // arret du timer principale 
+            gameTimer.Stop(); // arret du timer principal
+            timericon.Visible = false;
             timeleft.Text = "" ;//+iscountdown
+
             if (iscountdown == true ) // arret du timer des effets 
             {
                 timer2.Stop();
